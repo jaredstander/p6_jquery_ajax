@@ -3,10 +3,9 @@ get '/' do
   erb :index
 end
 
-post '/color' do
-
+post '/colour' do
   #Create and return a JSON object with the random cell and color given below.
-
-  cell= rand(1..9)
-  color= "#" + "%06x" % (rand * 0xffffff)
+  cell = rand(1..9)
+  colour = "#" + "%06x" % (rand * 0xffffff)
+  response = {:cell => cell, :colour => colour}.to_json
 end
